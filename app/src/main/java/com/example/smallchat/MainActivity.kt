@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
 
                 /*Explicit intent --->  current (this) activity to another(ReceiverActivity) activity*/
                 val  messageIntent = Intent(this,ReceiverActivity::class.java)
+
+                /*pass data to another activity*/
+                messageIntent.putExtra("user_message",message)
                 startActivity(messageIntent)
                 Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
 

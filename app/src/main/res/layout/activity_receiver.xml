@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/ic_launcher"
+    android:padding="30dp"
     tools:context=".ReceiverActivity">
+
+    <TextView
+        android:id="@+id/tv_user_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="text"
+        android:textColor="#E91E63"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"/>
 
 </LinearLayout>

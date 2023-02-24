@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnShowToast"
+        android:id="@+id/btn_show_toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,5 +18,26 @@
         android:layout_marginLeft="130dp"
         android:backgroundTint="@color/teal_200"
         android:text="Show Toast" />
+
+    <EditText
+        android:id="@+id/et_user_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Message"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/btn_show_toast"
+        android:layout_marginTop="50dp"
+        android:ems="10"/>
+
+    <Button
+        android:id="@+id/btn_send_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_user_message"
+        android:layout_marginTop="50dp"
+        android:text="send message"/>
+
+
+
 
 </RelativeLayout>

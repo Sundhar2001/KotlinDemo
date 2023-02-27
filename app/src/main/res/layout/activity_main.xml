@@ -39,6 +39,7 @@
         android:text="send message"/>
 
     <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_send_message"
@@ -51,12 +52,25 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:drawableLeft="@drawable/ic_share"
+        android:backgroundTint="@color/teal_200"
         android:layout_marginTop="50dp"
         android:textAllCaps="false"
         app:cornerRadius="10dp"
         android:text="Share" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:layout_marginTop="50dp"
+        app:cornerRadius="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="RecyclerView Demo" />
+
 
 
 

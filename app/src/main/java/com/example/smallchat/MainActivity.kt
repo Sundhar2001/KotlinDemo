@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
    lateinit var userMessage: EditText
    lateinit var btnSendMessage: Button
    lateinit var btnShare: Button
+   lateinit var btnRecyclerview: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +26,15 @@ class MainActivity : AppCompatActivity() {
          btnShowToast = findViewById(R.id.btn_show_toast)
          btnSendMessage = findViewById(R.id.btn_send_message)
          userMessage = findViewById(R.id.et_user_message)
-        btnShare = findViewById(R.id.btn_share)
+         btnShare = findViewById(R.id.btn_share)
+         btnRecyclerview = findViewById(R.id.btn_recyclerview)
 
         btnShowToast.setOnClickListener {
             Log.i("MainActivity","Button was clicked !")
             Toast.makeText(this,"Welcome",Toast.LENGTH_LONG).show()
         }
 
+        /*button for explicit intent test*/
         btnSendMessage.setOnClickListener {
 
             var message = userMessage.text.toString()    /*val message = userMessage.text.toString() ----> //possible// */
@@ -42,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please enter the message",Toast.LENGTH_SHORT).show()
 
             }else{
-
                 /*Explicit intent --->  current (this) activity to another(ReceiverActivity) activity*/
                 val  messageIntent = Intent(this,ReceiverActivity::class.java)
 
@@ -52,10 +54,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
 
                 Log.d("IntentButton","SuccessMessage")
-
             }
-
         }
+
+        /*button for implicit intent test */
         btnShare.setOnClickListener {
 
             var message = userMessage.text.toString()    /*val message = userMessage.text.toString() ----> //possible// */
@@ -72,11 +74,13 @@ class MainActivity : AppCompatActivity() {
                 intent.type = "text/plain"
 
                 startActivity(Intent.createChooser(intent, "Please select the application"))
-
             }
-
-
         }
 
+        /*button for recyclerview demo */
+        btnRecyclerview.setOnClickListener {
+            val recycleIntent =  Intent(this,MyHobbiesActivity::class.java)
+            startActivity(recycleIntent)
+        }
     }
 }

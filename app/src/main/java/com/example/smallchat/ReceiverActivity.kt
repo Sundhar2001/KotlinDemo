@@ -11,6 +11,9 @@ class ReceiverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receiver)
 
+        /*Hide default tool bar*/
+        supportActionBar!!.hide()
+
         val bundle: Bundle?= intent.extras
         val message = bundle?.getString("user_message")
 

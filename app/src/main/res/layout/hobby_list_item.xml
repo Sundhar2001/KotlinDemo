@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/teal_200"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_hobby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hobby name"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:layout_weight="2"
+            android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/card_share"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_share"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+

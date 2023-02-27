@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
    lateinit var btnShowToast: Button
    lateinit var userMessage: EditText
    lateinit var btnSendMessage: Button
+   lateinit var btnShare: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
          btnShowToast = findViewById(R.id.btn_show_toast)
          btnSendMessage = findViewById(R.id.btn_send_message)
          userMessage = findViewById(R.id.et_user_message)
+        btnShare = findViewById(R.id.btn_share)
 
         btnShowToast.setOnClickListener {
             Log.i("MainActivity","Button was clicked !")
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             /*validate textview is empty or not*/
             if (message.isEmpty()){
                 Log.d("IntentButton","ErrorMessage")
-                Toast.makeText(this,"Please enter the value",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please enter the message",Toast.LENGTH_SHORT).show()
 
             }else{
 
@@ -54,5 +56,27 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+        btnShare.setOnClickListener {
+
+            var message = userMessage.text.toString()    /*val message = userMessage.text.toString() ----> //possible// */
+
+            if (message.isEmpty()){
+
+                Log.d("IntentButton","ErrorMessage")
+                Toast.makeText(this,"Please enter the message",Toast.LENGTH_SHORT).show()
+            }else {
+
+                val intent = Intent()
+                intent.action = Intent.ACTION_SEND
+                intent.putExtra(Intent.EXTRA_TEXT, message)
+                intent.type = "text/plain"
+
+                startActivity(Intent.createChooser(intent, "Please select the application"))
+
+            }
+
+
+        }
+
     }
 }
